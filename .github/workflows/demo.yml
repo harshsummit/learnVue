@@ -8,9 +8,14 @@ on:
 jobs:
   test_schedule:
     runs-on: ubuntu-latest
+    
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
       - name: Every two minute
         run: echo "This step will always run every two minutes"
       - name: Build Styleguide
-        run: npm i && npm run styleguide:build
+        run: npm ci && npm run styleguide:build
 
