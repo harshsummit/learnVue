@@ -18,10 +18,28 @@ jobs:
         run: echo "This step will always run every five minutes"
       - name: Build Styleguide
         run: npm ci && npm run styleguide:build
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
+#       - name: Archive production artifacts
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: dist-without-markdown
+#           path: |
+#             styleguide
+      - name: Commit files
+        id: commit
+        run: |
+          git config --local user.email "HDutt@thesummitgrp.com"
+          git config --local user.name "harshsummit"
+          git add --all
+          if [-z "$(git status --porcelain)"]; then
+             echo "::set-output name=push::false"
+          else
+             git commit -m "Add changes" -a
+             echo "::set-output name=push::true"
+          fi
+        shell: bash
+      - name: Push changes
+        if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
         with:
-          name: dist-without-markdown
-          path: |
-            styleguide
+           github_token: ${{ secrets.TOKEN }}
 
