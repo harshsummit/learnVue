@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <h1> {{ headText }}</h1>
     <hr v-bind:style="{ marginBottom: '80px' }" />
-    <BootstrapVue />
+    <!-- <BootstrapVue /> -->
     <hr v-bind:style="{ marginBottom: '80px' }" />
     <FetchData />
     <hr v-bind:style="{ marginBottom: '80px' }" />
@@ -29,7 +29,7 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import BootstrapVue from './components/BootstrapVue.vue';
+// import BootstrapVue from './components/BootstrapVue.vue';
 import ClassAndStyle from './components/ClassAndStyle.vue';
 import ConditionalRendering from './components/ConditionalRendering.vue';
 import DataBinding from './components/DataBinding.vue';
@@ -60,7 +60,7 @@ export default {
     FormValidation,
     FilterVue,
     FetchData,
-    BootstrapVue
+    // BootstrapVue
   },
   data() {
     return {

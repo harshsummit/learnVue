@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <h1> ActiveBoot Component</h1>
         <div>
@@ -41,4 +41,4 @@ export default {
     name: "BootstrapVue",
 
 }
-</script>
+</script> -->

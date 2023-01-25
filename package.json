@@ -5,10 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "styleguide": "vue-cli-service styleguidist",
+    "styleguide:build": "vue-cli-service styleguidist:build"
   },
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
+    "@vuedoc/md": "^4.0.0-beta8",
+    "@vuedoc/parser": "^4.0.0-beta12",
     "axios": "^1.2.1",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
@@ -32,6 +36,7 @@
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "vue-cli-plugin-bootstrap-vue": "~0.8.2",
+    "vue-cli-plugin-styleguidist": "~4.54.4",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
