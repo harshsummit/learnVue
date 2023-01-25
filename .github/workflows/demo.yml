@@ -4,15 +4,6 @@ on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
-    inputs:
-        branch:
-          description: 'branch'
-          required: false
-          default: 'main'
-          type: choice
-          options:
-          - master
-          - main
 
 jobs:
   test_schedule:
@@ -24,7 +15,7 @@ jobs:
         with:
           node-version: "12.x"
       - name: Every two minute
-        run: echo "This step will always run every two minutes"
+        run: echo "This step will always run every five minutes"
       - name: Build Styleguide
         run: npm ci && npm run styleguide:build
       - name: Archive production artifacts
