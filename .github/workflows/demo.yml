@@ -12,5 +12,5 @@ jobs:
       - name: Every two minute
         run: echo "This step will always run every two minutes"
       - name: Build Styleguide
-        run: npm run styleguide:build
+        run: npm i && npm run styleguide:build
 
